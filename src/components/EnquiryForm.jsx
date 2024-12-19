@@ -11,8 +11,7 @@ const EnquiryForm = () => {
     contactNo: "",
     course: "",
   });
-
-  // Load enquiries from local storage when the component mounts
+  
   useEffect(() => {
     const storedEnquiries = localStorage.getItem("enquiries");
     if (storedEnquiries) {

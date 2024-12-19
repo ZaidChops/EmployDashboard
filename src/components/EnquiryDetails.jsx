@@ -14,7 +14,7 @@ const EnquiryDetails = () => {
         <thead>
           <tr className="bg-gray-100">
             <th className="border p-2">S.No</th>
-            <th className="border p-2">Name</th>
+            <th className="border p-2">Namee</th>
             <th className="border p-2">Email</th>
             <th className="border p-2">Contact</th>
             <th className="border p-2">Course</th>
