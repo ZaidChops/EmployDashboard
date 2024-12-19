@@ -1,8 +1,11 @@
-import  { useContext } from "react";
-import { EnquiryContext } from "./EnquiryContext";
+// import  { useContext } from "react";
+// import { EnquiryContext } from "./EnquiryContext";
+
+import { useSelector } from "react-redux";
 
 const EnquiryDetails = () => {
-  const { enquiries } = useContext(EnquiryContext);
+  // const { enquiries } = useContext(EnquiryContext);
+  const userData = useSelector((state) => state.userData.allData)
 
   return (
     <div>
@@ -18,7 +21,7 @@ const EnquiryDetails = () => {
           </tr>
         </thead>
         <tbody>
-          {enquiries.map((enquiry, index) => (
+          {userData.map((enquiry, index) => (
             <tr key={enquiry.id}>
               <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{enquiry.name}</td>

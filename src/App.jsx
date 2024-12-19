@@ -23,9 +23,9 @@
 // }
 
 // export default App;
-import { useState } from "react";
+// import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { EnquiryContext } from "./components/EnquiryContext";
+// import { EnquiryContext } from "./components/EnquiryContext";
 import Navbar from "./pages/Navbar";
 import Sidebar from "./pages/Sidebar";
 import EnquiryForm from "./components/EnquiryForm";
@@ -33,15 +33,13 @@ import EnquiryDetails from "./components/EnquiryDetails";
 import Home from "./pages/Home";
 
 function App() {
-  const [enquiries, setEnquiries] = useState([]);
+  // const [enquiries, setEnquiries] = useState([]);
 
   return (
-    <EnquiryContext.Provider value={{ enquiries, setEnquiries }}>
+    // <EnquiryContext.Provider value={{ enquiries, setEnquiries }}>
       <Router>
         <div className="flex">
-         
           <Sidebar />
-  
           <div className="ml-64 flex-1">
             <Navbar />
             <div className="p-4 mt-16 overflow-auto h-[calc(100vh-4rem)]">
@@ -54,7 +52,7 @@ function App() {
           </div>
         </div>
       </Router>
-    </EnquiryContext.Provider>
+    // </EnquiryContext.Provider>
   );
 }
 
