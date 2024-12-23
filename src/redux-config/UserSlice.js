@@ -1,18 +1,44 @@
+
+
+
+
+
+
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState={
-    allData: []
-}
+const initialState = {
+  allData: [],
+  editUser: { data: "", isEdit: false }, 
+};
 
 const userSlice = createSlice({
-    name : "userDta",
-    initialState,
-    reducers:{
-        addData:(state, action) =>{
-            state.allData=[...state.allData, action.payload]
-        }
-    }
-})
+  name: "userData",
+  initialState,
+  reducers: {
 
-export const {addData} = userSlice.actions
-export default userSlice.reducer
+    addData: (state, action) => {
+      state.allData = [...state.allData, action.payload];
+    },
+    // action object that is dispatched to the Redux store. This object typically contains a type and a payload.
+
+    editData: (state, action) => {
+      state.editUser = { data: action.payload, isEdit: true };
+    },
+
+    updateUser: (state, action) => {
+      state.allData = state.allData.map((item) =>
+        item.id === action.payload.id ? action.payload : item
+      );
+      state.editUser = { data: "", isEdit: false }; 
+    },
+  },
+});
+
+export const { addData, editData, updateUser } = userSlice.actions;
+export default userSlice.reducer;
+
+
+
+
+
+
