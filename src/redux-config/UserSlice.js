@@ -1,20 +1,21 @@
 
 
-
-
-
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allData: [],
-  editUser: { data: "", isEdit: false }, 
+  editUser: { data: "", isEdit: false },
 };
 
 const userSlice = createSlice({
   name: "userData",
   initialState,
   reducers: {
+
+    showData: (state, action) => {
+      state.allData = action.payload;
+    },
+
 
     addData: (state, action) => {
       state.allData = [...state.allData, action.payload];
@@ -29,16 +30,11 @@ const userSlice = createSlice({
       state.allData = state.allData.map((item) =>
         item.id === action.payload.id ? action.payload : item
       );
-      state.editUser = { data: "", isEdit: false }; 
+      state.editUser = { data: "", isEdit: false };
     },
   },
 });
 
-export const { addData, editData, updateUser } = userSlice.actions;
+export const { addData, editData, updateUser, showData } = userSlice.actions;
 export default userSlice.reducer;
-
-
-
-
-
 

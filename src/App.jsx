@@ -4,6 +4,8 @@ import Sidebar from "./pages/Sidebar";
 import EnquiryForm from "./components/EnquiryForm";
 import Dashboard from './pages/Dashboard';
 import Courses from "./components/Courses";
+import Trainers from "./components/Trainers";
+import Addmissions from "./components/Addmission";
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
               <Routes>
                 <Route path="/enquiry-form" element={<EnquiryForm />} />
                 <Route path="/courses" element={<Courses/>} />
+                <Route path="/addmission" element={<Addmissions/>} />
+                <Route path="/trainers" element={<Trainers/>} />
                 <Route path="/" element={<Dashboard/>} />
+           
               </Routes>
             </div>
           </div>
